@@ -1,3 +1,4 @@
+import Why from './Why.jsx'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, ScrollSmoother } from "gsap/all";
@@ -6,6 +7,7 @@ import hotelImage from './assets/Hotel1.png'
 import sky from './assets/Sky.jpg'
 import H1 from './assets/Highlight1.png'
 import H2 from './assets/Highlight2.png'
+import pool from './assets/Pool.jpg'
 
 
 const Hero = () => {
@@ -75,7 +77,7 @@ gsap.registerPlugin(ScrollTrigger);
             }
         });
 
-        gsap.to("#burger span", {
+        gsap.to(burgerRef.current, {
           backgroundColor: "white",
           ease: "power1.inOut",
             scrollTrigger: {
@@ -133,11 +135,22 @@ gsap.registerPlugin(ScrollTrigger);
         scrollTrigger: {
           trigger: "#aboutpiccont",
           start: "top bottom",
-          end: "bottom top",
+          end: "bottom 50%",
           scrub: true,
-          markers: true,
         },
       });
+
+    gsap.to('#poolimg', {
+      y: 200,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#poolcont',
+        start: 'top 90%',
+        end: 'bottom 50%',
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+    });
 
   }, []);
 
@@ -223,7 +236,7 @@ gsap.registerPlugin(ScrollTrigger);
 
     </section>
 
-    <section id="about" className = "relative w-full h-[180vh] bg-royalblue">
+    <section id="about" className = "relative w-full h-[253vh] bg-royalblue">
 
       <div id="aboutini" className = "relative top-[0vh] w-[50vw] h-[4vh] bg-royalblue"/>
       <div id='about2' className = 'relative top-[2vh] w-[70vw] h-[4vh] bg-royalblue'/>
@@ -232,22 +245,63 @@ gsap.registerPlugin(ScrollTrigger);
         <span className = 'absolute text-white text-right text-5xl font-family'>"Success is not final; failure is not fatal: It is the courage to continue that counts."</span>
       </div>
 
-      <div id = 'aboutpiccont' className = 'relative  w-[95vw] h-[90vh] mx-auto top-[10vh] flex flex-row justify-center items-center gap-4 '>
+      <div id = 'aboutpiccont' className = 'relative  w-[95vw] h-[90vh] mx-auto top-[10vh] flex flex-row justify-center items-center gap-4'>
         <span className = 'relative w-[50vw] h-[90vh] overflow-hidden'>
-          <img id = "leftpic"src={H1} alt="Hotel" className="w-[90vw] h-[80vh] object-cover" />
+          <img id = "leftpic"src={H1} alt="Hotel" className="absolute w-[90vw] h-[120vh] object-cover" />
         </span>
 
         <span className = 'relative w-[50vw] h-[90vh] overflow-hidden'>
-          <img id = "rightpic" src={H2} alt="Hotel" className="w-[90vw] h-[80vh] object-cover" />
+          <img id = "rightpic" src={H2} alt="Hotel" className="absolute w-[90vw] h-[120vh] object-cover" />
         </span>
       </div>
 
       <div className = 'relative mx-auto w-[80vw] h-[15vh] p-4 flex alighnItems-center justify-center top-[20vh]'>
-        <span className = 'absolute text-white text-center text-6xl font-family'>"The best way to find yourself is to lose yourself in the service of others."</span>
+        <span className = 'absolute text-white text-center text-6xl font-family'>
+          "The best way to find yourself is to lose yourself in the service of others."
+        </span>
       </div>
-      
+
+      <div id = 'poolcont' className = "relative w-[100vw] h-[100vh] bg-black mt-[40vh] z-2 overflow-hidden">
+      <img
+          id = 'poolimg'
+          src={pool}
+          alt="Pool"
+          className="absolute top-[-20vh] w-full h-[120vh] z-1 object-cover"
+      />
+
+      <span className="absolute top-[60vh] left-[10vw] group relative inline-block h-80 w-80 z-3">
+        <svg
+          viewBox="0 0 220 220"
+          className="circle-ring"
+          aria-label="hover ring"
+        >
+          <circle
+            cx="110"
+            cy="110"
+            r="90"
+            className="circle-ring__track"
+          />
+          <circle
+            cx="110"
+            cy="110"
+            r="90"
+            className="circle-ring__progress"
+          />
+        </svg>
+
+        <div className="relative ring-content z-4">
+          Explore
+        </div>
+
+      </span>
+
+        <span className = 'absolute w-[50vw] text-white text-6xl text-right font-family top-[60vh] right-[5vw] p-4 z-2'>
+          Instead of corridors, walking paths connect the apartments, making Era Residence feel closer to a group of private homes than a standard
+        </span>
+      </div>
     </section>
 
+    <Why/>
     </>
   )
 }

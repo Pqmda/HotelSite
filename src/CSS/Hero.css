@@ -41,4 +41,80 @@ body {
 
 @theme {
   --color-royalblue: #070B20;
+  --color-dirtywhite: #F3F3EC;
+}
+
+.circle-ring {
+  width: 20rem;
+  height: 20rem;
+  transform: rotate(-90deg);
+  overflow: visible;
+  transition: transform 0.2s ease;
+}
+
+.circle-ring__track,
+.circle-ring__progress {
+  fill: none;
+  stroke-width: 2;
+}
+
+.circle-ring__track {
+  stroke: rgba(255, 255, 255, 0.45);
+}
+
+.circle-ring__progress {
+  stroke: white;
+  stroke-dasharray: 565;
+  stroke-dashoffset: 565;
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.22, 1, 0.3, 1);
+}
+
+.circle-ring:hover {
+  animation: ringShake 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.circle-ring:hover .circle-ring__progress {
+  stroke-dashoffset: 0;
+}
+
+@keyframes ringShake {
+  0% {
+    transform: rotate(-90deg) translateX(0);
+  }
+  15% {
+    transform: rotate(-90deg) translateX(-1.5px);
+  }
+  35% {
+    transform: rotate(-90deg) translateX(2px);
+  }
+  55% {
+    transform: rotate(-90deg) translateX(-1.2px);
+  }
+  75% {
+    transform: rotate(-90deg) translateX(1px);
+  }
+  100% {
+    transform: rotate(-90deg) translateX(0);
+  }
+}
+
+.ring-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  height: 20rem;
+}
+
+.ring-content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  pointer-events: none;
 }

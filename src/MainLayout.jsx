@@ -1,5 +1,4 @@
 import Hero from './Hero.jsx'
-import About from './About.jsx'
 
 const MainLayout = () => {
   return (
