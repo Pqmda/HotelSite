@@ -211,13 +211,15 @@ gsap.registerPlugin(ScrollTrigger);
 
     </section>
 
-    <section id="about" className = "relative w-full h-[200vh] bg-royalblue">
+    <section id="about" className = "relative w-full h-[180vh] bg-royalblue">
+
       <div id="aboutini" className = "relative top-[0vh] w-[50vw] h-[4vh] bg-royalblue"/>
       <div id='about2' className = 'relative top-[2vh] w-[70vw] h-[4vh] bg-royalblue'/>
       <div id='about3' className = 'relative top-[4vh] w-[90vw] h-[4vh] bg-royalblue'/>
       <div className = 'relative left-[8vw] w-[80vw] h-[15vh] p-4 flex alignitems-center justify-center'>
         <span className = 'absolute text-white text-right text-5xl font-family'>"Success is not final; failure is not fatal: It is the courage to continue that counts."</span>
       </div>
+
       <div className = 'relative  w-[95vw] h-[90vh] mx-auto top-[10vh] flex flex-row justify-center items-center gap-4 '>
         <span className = 'relative w-[50vw] h-[90vh] overflow-hidden'>
           <img src={H1} alt="Hotel" className="w-[90vw] h-[80vh] object-cover" />
@@ -227,6 +229,11 @@ gsap.registerPlugin(ScrollTrigger);
           <img src={H2} alt="Hotel" className="w-[90vw] h-[80vh] object-cover" />
         </span>
       </div>
+
+      <div className = 'relative mx-auto w-[80vw] h-[15vh] p-4 flex alighnItems-center justify-center top-[20vh]'>
+        <span className = 'absolute text-white text-center text-6xl font-family'>"The best way to find yourself is to lose yourself in the service of others."</span>
+      </div>
+      
     </section>
 
     </>
