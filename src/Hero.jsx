@@ -236,7 +236,7 @@ gsap.registerPlugin(ScrollTrigger);
 
     </section>
 
-    <section id="about" className = "relative w-full h-[253vh] bg-royalblue">
+    <section id="about" className = "relative w-full h-260vh] bg-royalblue">
 
       <div id="aboutini" className = "relative top-[0vh] w-[50vw] h-[4vh] bg-royalblue"/>
       <div id='about2' className = 'relative top-[2vh] w-[70vw] h-[4vh] bg-royalblue'/>
