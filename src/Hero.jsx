@@ -1,7 +1,7 @@
 import Why from './Why.jsx'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger, ScrollSmoother } from "gsap/all";
+import { ScrollTrigger, SplitText } from "gsap/all";
 import { useRef } from "react";
 import hotelImage from './assets/Hotel1.png'
 import sky from './assets/Sky.jpg'
@@ -12,12 +12,13 @@ import pool from './assets/Pool.jpg'
 
 const Hero = () => {
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
     const headingRef = useRef();
     const barRef = useRef();
     const landingRef = useRef();
     const navRef = useRef();
     const burgerRef = useRef();
+    const hoteldescRef = useRef();
 
     const tlmaintext = gsap.timeline({
       scrollTrigger: {
@@ -88,6 +89,30 @@ gsap.registerPlugin(ScrollTrigger);
             },
         });
 
+        const setHeaderColor = (color) => {
+          gsap.to([headingRef.current, navRef.current], {
+            color,
+            borderColor: color,
+            duration: 0.45,
+            overwrite: 'auto',
+          })
+
+          gsap.to(burgerRef.current, {
+            backgroundColor: color,
+            duration: 0.45,
+            overwrite: 'auto',
+          })
+        }
+
+        ScrollTrigger.create({
+          trigger: '#why',
+          start: 'top 80%',
+          onEnter: () => setHeaderColor('black'),
+          onEnterBack: () => setHeaderColor('black'),
+          onLeaveBack: () => setHeaderColor('white'),
+          invalidateOnRefresh: true,
+        })
+
         gsap.to(landingRef.current, {
             y: -200,
             ease: "power1.in",
@@ -152,11 +177,35 @@ gsap.registerPlugin(ScrollTrigger);
       },
     });
 
+    
+    const hoteldesc = SplitText.create(hoteldescRef.current, {
+    type: 'words',
+    mask: 'words',
+  })
+    gsap.set(hoteldesc.words, {
+    yPercent: 100,
+    autoAlpha: 0,
+  })
+
+    gsap.to(hoteldesc.words, {
+    yPercent: 0,
+    autoAlpha: 1,
+    stagger: 0.02,
+    ease: 'power1.inOut',
+    scrollTrigger: {
+      trigger: hoteldescRef.current,
+      start: 'top bottom',
+      end: 'top 50%',
+      scrub: 1,
+    },
+  })
+
+
   }, []);
 
 
   return (
-    <>
+    <div className='font-["Satoshi"]'>
         <div ref={headingRef} id = "heading" className = 'fixed top-45 left-10 w-[26vw] h-[15vh] p-10 px-10 z-20 border-2 border-black justify-center items-center flex'>
             <h1  className="fixed text-8xl font-family ">
                 CZARINA
@@ -228,8 +277,8 @@ gsap.registerPlugin(ScrollTrigger);
         </div>
       </div>
 
-      <div id = "text3rd" className = 'absolute top-[80vh] left-[25vw] w-[50vw] h-[25vh] z-20 flex items-center justify-center'>
-        <p className = "relative text-center text-3xl font-family text-white">
+      <div id = "text3rd" className = 'absolute top-[100vh] ml-[20vw] w-[60vw] h-[25vh] z-20 flex items-center justify-center p-4'>
+        <p className = "relative text-center text-[3rem] font-family text-white">
           Experience the epitome of elegance and sophistication at our luxurious hotel, where every detail is meticulously crafted to provide an unforgettable stay.
         </p>
       </div>
@@ -256,12 +305,12 @@ gsap.registerPlugin(ScrollTrigger);
       </div>
 
       <div className = 'relative mx-auto w-[80vw] h-[15vh] p-4 flex alighnItems-center justify-center top-[20vh]'>
-        <span className = 'absolute text-white text-center text-6xl font-family'>
-          "The best way to find yourself is to lose yourself in the service of others."
+        <span ref = {hoteldescRef} className = 'absolute text-white text-left text-6xl font-family'>
+          This hotel is a sanctuary of elegance and comfort, where every detail is meticulously designed to create an unforgettable experience for our guests.
         </span>
       </div>
 
-      <div id = 'poolcont' className = "relative w-[100vw] h-[100vh] bg-black mt-[40vh] z-2 overflow-hidden">
+      <div id = 'poolcont' className = "relative w-[100vw] h-[120vh] bg-black mt-[40vh] z-2 overflow-hidden">
       <img
           id = 'poolimg'
           src={pool}
@@ -302,7 +351,7 @@ gsap.registerPlugin(ScrollTrigger);
     </section>
 
     <Why/>
-    </>
+    </div>
   )
 }
 
