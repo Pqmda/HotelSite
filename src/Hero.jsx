@@ -8,6 +8,7 @@ import sky from './assets/Sky.jpg'
 import H1 from './assets/Highlight1.png'
 import H2 from './assets/Highlight2.png'
 import pool from './assets/Pool.jpg'
+import ContactForm from './Components/ContactForm.jsx'
 
 
 const Hero = () => {
@@ -211,7 +212,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
                 CZARINA
             </h1>
         </div>
-
+      
     <div className = 'fixed w-full pt-10 px-10 z-20 '>
         <nav ref={navRef} className="flex items-center justify-between text-xs tracking-widest text-black font-sans font-medium">
             {/* Hamburger / Menu icon on the left */}
@@ -219,7 +220,6 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
               <span className="w-6 h-0.5 bg-black"></span>
               <span className="w-6 h-0.5 bg-black"></span>
             </div>
-
             {/* Navigation links pushed to the right side of the screen */}
             <div className="flex items-center gap-10 space-x-8">
               <a href="#select" className="hover:opacity-70 transition-opacity">
@@ -229,9 +229,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
                 <span>♡</span>
                 <span>0</span>
               </span>
-              <a href="#contact" className="hover:opacity-70 transition-opacity">
-                CONTACT US
-              </a>
+              <ContactForm />
             </div>
         </nav>
     </div>

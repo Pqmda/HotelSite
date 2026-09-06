@@ -163,3 +163,19 @@ body {
   text-transform: uppercase;
   pointer-events: none;
 }
+
+@keyframes contact-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.contact-modal > div {
+  animation: contact-modal-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
