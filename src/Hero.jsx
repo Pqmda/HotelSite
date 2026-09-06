@@ -30,16 +30,6 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
       },
     });
 
-    // const tlaboutfragments = gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: "#about",
-    //       start: "top bottom",
-    //       end: "bottom bottom",
-    //       scrub: true,
-    //       markers: true,
-    //     },
-    //   });
-
     useGSAP(() => {
 
         gsap.to(barRef.current, {
