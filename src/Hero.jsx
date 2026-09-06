@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { useRef } from "react";
 import hotelImage from './assets/Hotel1.png'
-import sky from './assets/Sky.jpg'
+import sky from './assets/sky.jpg'
 import H1 from './assets/Highlight1.png'
 import H2 from './assets/Highlight2.png'
 import pool from './assets/Pool.jpg'
