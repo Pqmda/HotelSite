@@ -8,6 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
 n8n integration with the web
+<img width="1911" height="1078" alt="image" src="https://github.com/user-attachments/assets/b2b3d41c-9c58-4f5d-b5f3-3b45a0a9f6ea" />
 
 <img width="1602" height="519" alt="image" src="https://github.com/user-attachments/assets/e2a11a6e-d8b1-4289-b7e9-ee43c4d7238f" />
 
