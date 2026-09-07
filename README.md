@@ -26,7 +26,14 @@ https://github.com/user-attachments/assets/9d45b06e-731e-46af-9b5b-5e9e7bf8e28a
 *Asynchronous booking/inquiry handling with custom priority routing.*
 
 ![n8n Workflow Execution](./assets/n8n-workflow-screenshot.png)
-*(Replace with your screenshot of the n8n canvas & execution logs)*
+<img width="1556" height="565" alt="image" src="https://github.com/user-attachments/assets/1b8bba1e-9c61-4f6f-b4c4-2a4b120207db" />
+<img width="1740" height="793" alt="image" src="https://github.com/user-attachments/assets/f0f625ae-cc03-476d-a2fc-969575555c5d" />
+<img width="1850" height="994" alt="image" src="https://github.com/user-attachments/assets/a38051fc-72f3-4c47-8a62-124481ed676a" />
+<img width="1852" height="597" alt="image" src="https://github.com/user-attachments/assets/f4432e39-03ca-4314-ad86-e04d7050c8e5" />
+
+
+<img width="1861" height="708" alt="image" src="https://github.com/user-attachments/assets/a0c510ef-54ce-410b-868a-5230c739e10f" />
+
 
 > **⚙️ Backend Architecture Note:**  
 > The **n8n automation instance is self-hosted locally** and triggered via webhooks. While live public form submissions on the Vercel demo site will not execute live backend requests when the local server is offline, the full payload routing logic and execution logs are fully documented above.
