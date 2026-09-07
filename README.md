@@ -1,19 +1,66 @@
-# React + Vite
+# 🏨 CZARINA — Luxury Hotel Experience & Automation Engine
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> A high-performance, motion-driven luxury hotel frontend built with **React, Vite, Tailwind CSS, and GSAP**, paired with an asynchronous **n8n workflow automation pipeline** for priority inquiry routing.
 
-Currently, two official plugins are available:
+[![Live Demo](https://img.shields.io/badge/Live_Demo-czarina.vercel.app-000000?style=for-the-badge&logo=vercel)](https://czarina.vercel.app)
+[![Tech Stack](https://img.shields.io/badge/Stack-React_%7C_GSAP_%7C_n8n-blue?style=for-the-badge)](https://github.com/Pqmda/HotelSite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-n8n integration with the web
-<img width="1911" height="1078" alt="image" src="https://github.com/user-attachments/assets/b2b3d41c-9c58-4f5d-b5f3-3b45a0a9f6ea" />
+## 📸 Visual Showcase & Architecture
 
-<img width="1602" height="519" alt="image" src="https://github.com/user-attachments/assets/e2a11a6e-d8b1-4289-b7e9-ee43c4d7238f" />
+### 1. High-Performance Motion UI
+*Interactive layout reveals, continuous smooth scrolling with GSAP/Lenis, and responsive hotel showcase.*
 
-<img width="1225" height="266" alt="image" src="https://github.com/user-attachments/assets/5230c34f-a9f5-480c-81ab-e409b7848997" />
+![Frontend UI Demo](./assets/demo.gif)
+*(Replace with your GIF or screenshot of the landing page)*
 
+---
 
+### 2. Automated Inquiry & Priority Pipeline
+*Asynchronous booking/inquiry handling with custom priority routing.*
 
+![n8n Workflow Execution](./assets/n8n-workflow-screenshot.png)
+*(Replace with your screenshot of the n8n canvas & execution logs)*
 
+> **⚙️ Backend Architecture Note:**  
+> The **n8n automation instance is self-hosted locally** and triggered via webhooks. While live public form submissions on the Vercel demo site will not execute live backend requests when the local server is offline, the full payload routing logic and execution logs are fully documented above.
+
+---
+
+## ✨ Key Technical Features
+
+- **60 FPS Motion & Smooth Scroll:** Engineered using GSAP animations, Lenis smooth scrolling, and Tailwind CSS layout design.
+- **Priority-Based Workflow Automation:** Built a self-hosted n8n pipeline that receives frontend webhooks, evaluates urgency/type of inquiry, and conditionally routes high-priority requests to instant alert channels while logging standard inquiries.
+- **Dynamic State Management:** Optimized React render cycles for seamless interactive booking/inquiry form handling.
+- **Production Deployment:** Deployed frontend on Vercel with clean repository setup and environment management.
+
+---
+
+## 🛠️ Tech Stack & Systems
+
+| Layer | Technologies Used |
+| :--- | :--- |
+| **Frontend Framework** | React (Vite), JavaScript (ES6+) |
+| **Styling & Motion** | Tailwind CSS, GSAP, Lenis Smooth Scroll |
+| **Automation / Backend** | n8n (Self-Hosted), REST APIs, Webhooks |
+| **Deployment & Ops** | Vercel, Git / GitHub |
+
+---
+
+## ⚙️ Local Setup & Run Guide
+
+To run the frontend locally on your machine:
+
+```bash
+# 1. Clone the repository
+git clone [https://github.com/Pqmda/HotelSite.git](https://github.com/Pqmda/HotelSite.git)
+
+# 2. Navigate into the directory
+cd HotelSite
+
+# 3. Install dependencies
+npm install
+
+# 4. Run the development server
+npm run dev
