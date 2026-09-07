@@ -13,7 +13,12 @@
 *Interactive layout reveals, continuous smooth scrolling with GSAP/Lenis, and responsive hotel showcase.*
 
 ![Frontend UI Demo](./assets/demo.gif)
-*(Replace with your GIF or screenshot of the landing page)*
+
+https://github.com/user-attachments/assets/ff00f794-3a42-4ae0-8926-23d45ba6cb1a
+
+
+https://github.com/user-attachments/assets/9d45b06e-731e-46af-9b5b-5e9e7bf8e28a
+
 
 ---
 
