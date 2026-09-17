@@ -16,6 +16,10 @@ html, body, #root {
   margin: 0;
   min-height: 100%;
   min-height: 100vh;
+  /* Safety net: several sections still use vw-based absolute positioning
+     for the desktop composition. This guarantees no stray element can
+     force sideways scroll on narrow viewports. */
+  overflow-x: hidden;
 }
 
 body {
@@ -90,11 +94,18 @@ body {
 }
 
 .circle-ring {
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+  height: 100%;
   transform: rotate(-90deg);
   overflow: visible;
   transition: transform 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .circle-ring {
+    width: 20rem;
+    height: 20rem;
+  }
 }
 
 .circle-ring__track,
