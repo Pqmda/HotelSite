@@ -16,6 +16,10 @@ html, body, #root {
   margin: 0;
   min-height: 100%;
   min-height: 100vh;
+  /* Safety net: several sections still use vw-based absolute positioning
+     for the desktop composition. This guarantees no stray element can
+     force sideways scroll on narrow viewports. */
+  overflow-x: hidden;
 }
 
 body {
@@ -90,11 +94,18 @@ body {
 }
 
 .circle-ring {
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+  height: 100%;
   transform: rotate(-90deg);
   overflow: visible;
   transition: transform 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .circle-ring {
+    width: 20rem;
+    height: 20rem;
+  }
 }
 
 .circle-ring__track,
@@ -178,4 +189,36 @@ body {
 
 .contact-modal > div {
   animation: contact-modal-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Tailwind's breakpoints are width-only. These two spots specifically
+   need height- and ultra-narrow-width awareness that utility classes
+   alone can't express cleanly. */
+
+/* Short mobile/landscape viewports: the horizontal "why" section uses
+   vh-based offsets that assume a tall-ish screen. On short viewports
+   (landscape phones, small-height devices) shrink the big NEW/GOLDEN/MILE
+   words and tighten their vertical spread so nothing gets clipped by the
+   section's overflow-hidden bounds. */
+@media (max-width: 1023px) and (max-height: 700px) {
+  #word-cont {
+    height: 64vh;
+  }
+
+  #word-cont span {
+    font-size: clamp(2.25rem, 15vw, 6.5rem) !important;
+  }
+}
+
+/* Ultra-narrow phones: give the logo lockup a little more headroom so
+   "CZARINA" never wraps inside its border box. */
+@media (max-width: 360px) {
+  #heading {
+    width: 48vw;
+    padding: 0.6rem;
+  }
+
+  #heading h1 {
+    font-size: 1.2rem;
+  }
 }
