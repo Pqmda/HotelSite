@@ -1,4 +1,5 @@
 import Why from './Why.jsx'
+import Header from './Header.jsx'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
@@ -8,7 +9,6 @@ import sky from './assets/sky.jpg'
 import H1 from './assets/Highlight1.png'
 import H2 from './assets/Highlight2.png'
 import pool from './assets/Pool.jpg'
-import ContactForm from './Components/ContactForm.jsx'
 
 
 const Hero = () => {
@@ -216,32 +216,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
   return (
     <div className='font-["Satoshi"]'>
-        <div ref={headingRef} id = "heading" className = 'fixed top-24 left-5 w-[45vw] sm:w-[35vw] lg:w-[26vw] h-auto lg:h-[15vh] p-4 sm:p-6 lg:p-10 lg:px-10 z-20 border-2 border-black justify-center items-center flex lg:top-45 lg:left-10'>
-            <h1 className="fixed font-family text-[clamp(1.75rem,7vw,6rem)]">
-                CZARINA
-            </h1>
-        </div>
-      
-    <div className = 'fixed w-full pt-6 px-5 sm:pt-8 sm:px-8 lg:pt-10 lg:px-10 z-20 '>
-        <nav ref={navRef} className="flex items-center justify-between text-[0.65rem] sm:text-xs tracking-widest text-black font-sans font-medium">
-            {/* Hamburger / Menu icon on the left */}
-            <div ref={burgerRef} className="flex flex-col space-y-1 cursor-pointer">
-              <span className="w-6 h-0.5 bg-black"></span>
-              <span className="w-6 h-0.5 bg-black"></span>
-            </div>
-            {/* Navigation links pushed to the right side of the screen */}
-            <div className="flex items-center gap-3 sm:gap-6 lg:gap-10 lg:space-x-8">
-              <a href="#select" className="hover:opacity-70 transition-opacity">
-                SELECT OFFICE SPACE
-              </a>
-              <span className="flex items-center space-x-1 cursor-pointer">
-                <span>♡</span>
-                <span>0</span>
-              </span>
-              <ContactForm />
-            </div>
-        </nav>
-    </div>
+        <Header headingRef={headingRef} navRef={navRef} burgerRef={burgerRef} />
 
     <section id="landing" className="relative w-[100vw] h-[150vh] overflow-hidden bg-image bg-cover bg-center" style={{ backgroundImage: `url(${sky})` }}>
         <img
@@ -249,7 +224,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
             alt="Hotel"
             ref={landingRef}
             id = 'hotelmain'
-            className="absolute top-[20vh] inset-0 mt-40 sm:mt-60 lg:mt-100 w-full h-[120vh] z-9"
+            className="absolute top-[20vh] inset-0 mt-40 sm:mt-60 lg:mt-100 w-full h-[120vh] z-9 object-cover"
         />  
         
       <div ref = {barRef} id = 'leftbar' className="relative z-10 w-full">
