@@ -2,7 +2,7 @@
 
 > A high-performance, motion-driven luxury hotel frontend built with **React, Vite, Tailwind CSS, and GSAP**, paired with an asynchronous **n8n workflow automation pipeline** for priority inquiry routing.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-czarina.vercel.app-000000?style=for-the-badge&logo=vercel)](https://czarina.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-czarina.vercel.app-000000?style=for-the-badge&logo=vercel)](https://czarina-hotel.vercel.app/)
 [![Tech Stack](https://img.shields.io/badge/Stack-React_%7C_GSAP_%7C_n8n-blue?style=for-the-badge)](https://github.com/Pqmda/HotelSite)
 
 ---
